@@ -1,0 +1,438 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0\fnil\fcharset0 Courier New;}}
+{\*\generator Msftedit 5.41.15.1503;}\viewkind4\uc1\pard\lang1033\f0\fs20 5 Card Stud:\par
+\par
+Royal Flush:\tab 4 ways; .0001539%; (4)\par
+Straight Flush:\tab 36 ways; .001375%; ((10 * 4) - 4)\par
+Four-of-a-kind:\tab 624 ways; .02401%; ((13 C 2)(4 C 4)(4 C 1) * 2)\par
+Full House:\tab 3,744 ways; .1441%; ((13 C 2)(4 C 3)(4 C 2) * 2)\par
+Flush:\tab\tab 5,108 ways; .1965%; ((13 C 5) * 4 - 40)\par
+Straight:\tab 10,200 ways; .3925%; (10 * 4^5 - 40)\par
+Three-of-a-kind:54,912 ways; 2.113%; ((13 C 3)(4 C 3)(4 C 1)^2 * 3)\par
+Two Pair:\tab 123,552 ways; 4.754%; ((13 C 3)(4 C 2)^2(4 C 1) * 3)\par
+Pair:\tab\tab 1,098,240 ways; 42.26%; ((13 C 4)(4 C 2)(4 C 1)^3 * 4)\par
+High Card:\tab 1,302,540 ways; 50.16%\par
+\par
+Texas Hold'em:\par
+\par
+Example to find %'s with given hand:\par
+\par
+AKs\par
+\par
+Royal Flush:\tab\par
+\tab\tab in the given hand's suit:\par
+\tab\tab\tab 1,081 ways; .05102%; ((47 C 2))\par
+\par
+\tab\tab\tab - To get the Royal Flush in the AKs, one must\par
+\tab\tab\tab   get the 3 cards necessary, Q, J, T of that\par
+\tab\tab\tab   suit. The other 2 cards that come out on\par
+\tab\tab\tab   flop can be of any combination of the\par
+\tab\tab\tab   remaining 47 cards.\par
+\par
+\tab\tab any other suit;\par
+\tab\tab\tab 3 ways; .0001416%; ((3 C 1)(45 C 0))\par
+\par
+\tab\tab\tab - To get the Royal Flush in any other suit,\par
+\tab\tab\tab   you must get the 5 cards needed all in the\par
+\tab\tab\tab   flop and there are only 3 other, potential\par
+\tab\tab\tab   Royal Flushes, which are of the 3 suits\par
+\tab\tab\tab   that the AKs is not.\par
+\par
+\tab\tab total % chance to get Royal Flush:\par
+\tab\tab\tab 1,084 ways; .05116%\par
+\par
+Straight Flush:\tab\par
+\tab\tab to the 5:\par
+\tab\tab\tab 45 ways; .002124%; ((46 C 1) - (1 C 1)(45 C 0))\par
+\par
+\tab\tab\tab - The Straight Flush to the 5 needs 4 cards,\par
+\tab\tab\tab   while the other card does not matter, except\par
+\tab\tab\tab   for the 6 of the AKs suit, which would mean\par
+\tab\tab\tab   that the best hand would be a Straight Flush\par
+\tab\tab\tab   to the 6.\par
+\par
+\tab\tab any other Straight Flush:\par
+\tab\tab\tab 33 ways; .001558%; ((9 C 1)(3 C 1)(45 C 0) + \par
+\tab\tab\tab\tab\tab\tab   (6 C 1)(1 C 1)(45 C 0))\par
+\par
+\tab\tab\tab - There are 6 possible Straights in the\par
+\tab\tab\tab   AKs suit (to the Q Straight Flush is,\par
+\tab\tab\tab   with this hand, a Straight Flush to the\par
+\tab\tab\tab   A, so it is discounted) and 9 possible \par
+\tab\tab\tab   Straights in the remaining 3 suits.\par
+\par
+\tab\tab total % chance to get Straight Flush:\par
+\tab\tab\tab 78 ways; .003681%\par
+\par
+Four-of-a-kind:\tab\par
+\tab\tab 4 A's:\par
+\tab\tab\tab 1,081 ways; .05102%; ((47 C 2))\par
+\par
+\tab\tab\tab - To get the Four-of-a-kind in A's, there\par
+\tab\tab\tab   are 3 cards needed to make it, which means\par
+\tab\tab\tab   that there are 47 choose 2 combinations of\par
+\tab\tab\tab   other cards that can still yield 3 A's.\par
+\par
+\tab\tab 4 K's:\par
+\tab\tab\tab "\tab "\par
+\par
+\tab\tab 4 of any other card:\par
+\tab\tab\tab 506 ways; .02388%; ((11 C 1)(46 C 1))\par
+\tab\tab\par
+\tab\tab\tab - There are 11 other Four-of-a-kinds that\par
+\tab\tab\tab   could be possible and each one of those\par
+\tab\tab\tab   has 46 different combinations of\par
+\tab\tab\tab   appearing.\par
+\par
+\tab\tab total % chance to get Four-of-a-kind:\par
+\tab\tab\tab 2,668 ways; .1259%\par
+\par
+Full House:\tab\par
+\tab\tab A's over K's:\par
+\tab\tab\tab 9,312 ways; .4395%; ((3 C 2)(3 C 1)(46 C 2) - \par
+\tab\tab\tab\tab\tab      (3 C 2)(3 C 3)(45 C 0))\par
+\par
+\tab\tab\tab - To get A's over K's with AKs, you need 2\par
+\tab\tab\tab   more A's and 1 more K. There are 46 choose\par
+\tab\tab\tab   2 combinations of this, since, if the other\par
+\tab\tab\tab   A is drawn, there will be a Four-of-a-kind,\par
+\tab\tab\tab   which should be disregarded. Although the\par
+\tab\tab\tab   last A is taken from the deck, one must still\par
+\tab\tab\tab   consider the 2 K's, since 1 more K would\par
+\tab\tab\tab   still mean that the hand is a Full House\par
+\tab\tab\tab   A's over K's, but, if 2 K's are drawn, this\par
+\tab\tab\tab   leads to a Four-of-a-kind, so the possibility\par
+\tab\tab\tab   for that must be taken out.\par
+\par
+\tab\tab K's over A's:\par
+\tab\tab\tab 8,514 ways; .4018%; ((3 C 2)(3 C 1)(44 C 2))\par
+\par
+\tab\tab\tab - This works with the same rational as the\par
+\tab\tab\tab   A's over K's, except there is the\par
+\tab\tab\tab   possibility that one may get 2 A's, along\par
+\tab\tab\tab   with 2 K's, which is no longer K's over\par
+\tab\tab\tab   A's, but, instead, is A's over K's, so\par
+\tab\tab\tab   the last K and both the A's are to be\par
+\tab\tab\tab   removed from the deck.\par
+\par
+\tab\tab A's over some other card besides K, x's:\par
+\tab\tab\tab 8,910 ways; .4205%; ((11 C 1)(3 C 2)(4 C 2)(45 C 1))\par
+\par
+\tab\tab\tab - To get A's over x's, one must obtain 2\par
+\tab\tab\tab   more A's and 2 x's. Since there are\par
+\tab\tab\tab   11 different values that x could be,\par
+\tab\tab\tab   there are 11 instances that one can\par
+\tab\tab\tab   have A's over x's. Because the best\par
+\tab\tab\tab   5 card hand will be a Four-of-a-kind\par
+\tab\tab\tab   with the last A on appearing on the\par
+\tab\tab\tab   table, that A will be removed, leaving\par
+\tab\tab\tab   the deck with 45 cards.\par
+\par
+\tab\tab x's over A's:\par
+\tab\tab\tab 5,676 ways; .2679%; ((11 C 1)(4 C 3)(3 C 1)(43 C 1))\par
+\tab\tab\tab\par
+\tab\tab\tab - You need 3 x's and 2 A's to get x's over\par
+\tab\tab\tab   A's. The same sort of logic used in A's\par
+\tab\tab\tab   over x's is used here, except, now, not\par
+\tab\tab\tab   only does drawing 1 of the 2 A's change\par
+\tab\tab\tab   the hand, but the last x appearing will\par
+\tab\tab\tab   make the hand a Four-of-a-kind, so all 3\par
+\tab\tab\tab   of those cards are removed from the deck\par
+\tab\tab\tab   leaving 43 cards in the deck for the last\par
+\tab\tab\tab   card to be.\par
+\par
+\tab\tab K's over x's:\par
+\tab\tab\tab "\tab "\par
+\par
+\tab\tab x's over K's:\par
+\tab\tab\tab "\tab "\par
+\par
+\tab\tab any other Full House:\par
+\tab\tab\tab 2,640 ways; .1246%; ((11 P 2)(4 C 3)(4 C 2)(45 C 0))\par
+\par
+\tab\tab\tab - There are 11 permutation 2 possible\par
+\tab\tab\tab   Full Houses, besides those pertaining\par
+\tab\tab\tab   to any K's or A's with 4 choose 3 times\par
+\tab\tab\tab   4 choose 2 combinations of each Full\par
+\tab\tab\tab   House.\tab\tab   \par
+\par
+\tab\tab total % chance to get Full House:\par
+\tab\tab\tab 49,638 ways; 2.343%\tab\par
+\par
+Flush:\par
+\tab\tab a Flush of the AKs suit:\par
+\tab\tab\tab 135,597 ways; 6.400%; ((11 C 3)(39 C 2) +\par
+\tab\tab\tab\tab\tab        (11 C 4)(39 C 1) +\par
+\tab\tab\tab\tab\tab        (11 C 5)(39 C 0))\par
+\par
+\tab\tab\tab - Since there are 11 cards left of the\par
+\tab\tab\tab   AKs suit, then there are 3 possible\par
+\tab\tab\tab   Flushes that one could get: a 7-card,\par
+\tab\tab\tab   6-card, and 5-card Flushes. Because\par
+\tab\tab\tab   each possible Flush is being accounted\par
+\tab\tab\tab   for, the combinations with the cards\par
+\tab\tab\tab   of the AKs suit should not be counted.\par
+\tab\tab\tab   Therefore, the deck size becomes 39\par
+\tab\tab\tab   cards (50 - 11).\par
+\tab\tab\tab   \par
+\par
+\tab\tab any other Flush:\par
+\tab\tab\tab 3,834 ways; .1810%; ((3 C 1)(13 C 5)(37 C 0) - \par
+\tab\tab\tab\tab\tab      (9 C 1)(3 C 1)(5 C 5)(37 C 0))\par
+\par
+\tab\tab\tab - There are 3 other suits and 13\par
+\tab\tab\tab   cards left of each one of those\par
+\tab\tab\tab   suits. The only time these cards\par
+\tab\tab\tab   would make a hand that is not a\par
+\tab\tab\tab   Flush is if they make a Royal\par
+\tab\tab\tab   Flush or any Straight Flush.\par
+\par
+\tab\tab total % chance to get Flush:\par
+\tab\tab\tab 139,431 ways; 6.581%\tab\tab\tab\par
+\par
+Straight:\tab\par
+\tab\tab a Straight to the A:\par
+\tab\tab\tab 67,968 ways; 3.208%; ((47 C 2)(4 C 1)^3 - \par
+\tab\tab\tab\tab\tab       (47 C 2) - \par
+\tab\tab\tab\tab\tab       (3 C 1)(10 C 2)(37 C 0))\par
+\par
+\tab\tab\tab - A Straight to the A can be made\par
+\tab\tab\tab   by getting the 3 necessary cards\par
+\tab\tab\tab   no matter what their suit maybe.\par
+\tab\tab\tab   Since there are 4 of each of\par
+\tab\tab\tab   these 3 cards, there are 4^3\par
+\tab\tab\tab   combinations one could get of\par
+\tab\tab\tab   those 3 cards. However, if those\par
+\tab\tab\tab   cards are of the same suit as the\par
+\tab\tab\tab   AKs, then you have a Royal Flush,\par
+\tab\tab\tab   which must be discounted. Also,\par
+\tab\tab\tab   there is the possibility that the\par
+\tab\tab\tab   3 cards necessary are of the same\par
+\tab\tab\tab   suit (a suit that is different from\par
+\tab\tab\tab   the AKs suit) and the 2 cards \par
+\tab\tab\tab   accompanying them are of that suit.\par
+\tab\tab\tab   In this case, there is a Flush, or,\par
+\tab\tab\tab   in the rare case, there might be a\par
+\tab\tab\tab   Straight Flush.\par
+\par
+\tab\tab a Straight to the 5:\par
+\tab\tab\tab 11,703 ways; .5524%; ((46 C 1)(4 C 1)^4 - \par
+\tab\tab\tab\tab\tab       (46 C 1) - \par
+\tab\tab\tab\tab\tab       (3 C 1)(9 C 1)(37 C 0))\par
+\par
+\tab\tab\tab - A Straight to the 5 can be made\par
+\tab\tab\tab   by taking getting the 4 necessary\par
+\tab\tab\tab   cards, which can be of any suit.\par
+\tab\tab\tab   (Same logic is applied on Straight\par
+\tab\tab\tab   to the 5 as was in to the A).\par
+\tab\tab\par
+\tab\tab any other Straight:\par
+\tab\tab\tab 6,126 ways; .2891%; ((6 C 1)(4 C 1)^5(45 C 0) - \par
+\tab\tab\tab\tab\tab      (6 C 1)(3 C 1)(37 C 0))\par
+\tab\tab\tab\par
+\tab\tab\tab - There are 6 other possible Straights\par
+\tab\tab\tab   (a Straight to the Q would leave you\par
+\tab\tab\tab   with a Straight to the A) and there\par
+\tab\tab\tab   are 4 cards of each card in that\par
+\tab\tab\tab   Straight (must discount for the\par
+\tab\tab\tab   possible Straight Flush in each suit).\par
+\tab\tab\par
+\tab\tab total % chance to get Straight:\par
+\tab\tab\tab 85,797 ways; 4.049%\par
+\par
+Three-of-a-kind:\par
+\tab\tab 3 A's:\par
+\tab\tab\tab 29,934 ways; 1.413%; ((3 C 2)(47 C 3) - \par
+\tab\tab\tab\tab\tab       (3 C 2)(3 C 1)(46 C 2) -\par
+\tab\tab\tab\tab\tab       (11 C 1)(3 C 2)(4 C 2)(45 C 1) -\par
+\tab\tab\tab\tab\tab       (11 C 3)(3 C 2)(37 C 0) -\tab\par
+\tab\tab\tab\tab\tab       ((4 C 1)^3(3 C 2)(44 C 0) -\par
+\tab\tab\tab\tab\tab        (3 C 2)(44 C 0)))\par
+\par
+\tab\tab\tab - There are 3 A's left in the deck, so\par
+\tab\tab\tab   there are 3 choose 2 different combinations\par
+\tab\tab\tab   of A's one could get and there are\par
+\tab\tab\tab   47 choose 3 combinations of that, since\par
+\tab\tab\tab   3 cards left to be shown and 47 cards\par
+\tab\tab\tab   left in the deck (the A is taken out of\par
+\tab\tab\tab   the deck, that is left, since, getting it\par
+\tab\tab\tab   in a hand would mean that the best hand\par
+\tab\tab\tab   would, now, become a Four-of-a-kind). \par
+\tab\tab\tab   However, you must account for the \par
+\tab\tab\tab   possibilities for Full Houses and \par
+\tab\tab\tab   Four-of-a-kind's.\par
+\par
+\tab\tab 3 K's:\par
+\tab\tab\tab "\tab "\par
+\par
+\tab\tab 3 x's:\par
+\tab\tab\tab 30,291 ways; 1.430%; ((11 C 1)(4 C 3)(46 C 2) -\par
+\tab\tab\tab\tab\tab       (11 C 1)(2 C 1)(4 C 3)(3 C 1)(45 C 1) -\par
+\tab\tab\tab\tab\tab       (11 C 1)(10 C 1)(4 C 3)(4 C 2)(44 C 0) -\par
+\tab\tab\tab\tab\tab       (3 C 1)(4 C 3)(10 C 2)(44 C 0) -\par
+\tab\tab\tab\tab\tab       ((3 C 1)(4 C 3)(4 C 1)^2(44 C 0) -\par
+\tab\tab\tab\tab\tab        (3 C 1)(44 C 0)))\par
+\par
+\tab\tab\tab - *****\par
+\par
+\tab\tab total % chance to get 3-of-a-kind:\par
+\tab\tab\tab 90,159 ways; 4.255%\par
+\par
+Two Pair:\par
+\tab\tab A's and K's:\par
+\tab\tab\tab 116,748 ways; 5.529%; ((3 C 1)(3 C 1)(44 C 3) -\par
+\tab\tab\tab\tab\tab        (11 C 1)(3 C 1)(3 C 1)(4 C 3)(41 C 0) -\par
+\tab\tab\tab\tab\tab        (3 C 1)(3 C 1)(11 C 3)(33 C 0) -\par
+\tab\tab\tab\tab\tab        ((3 C 1)(3 C 1)(4 C 1)^3(41 C 0) -\par
+\tab\tab\tab\tab\tab\tab (3 C 1)(3 C 1)(41 C 0)))\par
+\par
+\tab\tab\tab - ***** (2 A's 2 K's)\par
+\par
+\tab\tab A's and x's:\par
+\tab\tab\tab 142,200 ways; 6.711%; ((11 C 1)(3 C 1)(4 C 2)(40 C 2) -\par
+\tab\tab\tab\tab\tab        (11 C 2)(3 C 1)(4 C 2)(4 C 2)(38 C 0) -\par
+\tab\tab\tab\tab\tab        (11 C 1)(3 C 1)(1 C 1)(3 C 1)(10 C 2)(38 C 0) -\par
+\tab\tab\tab\tab\tab        ((3 C 1)(3 C 1)(4 C 2)(4 C 1)^2(38 C 0) -\par
+\tab\tab\tab\tab\tab\tab (3 C 1)(1 C 1)(3 C 1)(38 C 0)))\par
+\tab\tab\par
+\tab\tab\tab - ***** (2 A's 2 x's 3 K's)\par
+\par
+\tab\tab K's and x's:\par
+\tab\tab\tab "\tab "\par
+\par
+\tab\tab x's and y's:\par
+\tab\tab\tab 66,555 ways; 3.141%; ((11 C 2)(4 C 2)(4 C 2)(36 C 1) -\par
+\tab\tab\tab\tab\tab        (11 C 2)(3 C 1)(1 C 1)(3 C 1)(1 C 1)(9 C 1)(35 C 0)\par
+\tab\tab\tab\tab\tab        ((2 C 1)(4 C 2)(4 C 2)(4 C 1)(35 C 0) -\par
+\tab\tab\tab\tab\tab\tab (2 C 1)(1 C 1)(3 C 1)(1 C 1)(3 C 1)(35 C 0)))\par
+\tab\tab\par
+\tab\tab\tab - ***** (3 A's 3 K's 2 x's 2 y's)\par
+\par
+\tab\tab total % chance to get Two Pair:\par
+\tab\tab\tab 467,703 ways; 22.07%\par
+\par
+Pair:\par
+\tab\tab\par
+\par
+\par
+How to Find Out How Many Ways a Hand Can Make a Certain Type:\par
+\par
+Straight Flush:\par
+\tab\par
+\tab Straight Flush to anything but an A:\par
+\tab\tab\par
+\tab\tab No cards in the Straight Flush in hand:\par
+\tab\tab 1 C 1)^5 = 1 way = .00004720%\par
+\par
+\tab\tab 1 card "\tab ":\par
+\tab\tab (1 C 1)^4(45 C 1) = 45 ways = .002124%\par
+\par
+\tab\tab\tab - (45 C 1), not (46 C 1), since the card of one value\par
+\tab\tab\tab   greater than that of the top Straight Flush card\par
+\tab\tab\tab   will produce a Straight Flush to that higher card,\par
+\tab\tab\tab   so one card is removed from this selection.\par
+\par
+\tab\tab 2 cards suited "\tab ":\par
+\tab\tab (1 C 1)^3(46 C 2) = 1,035 ways = .04885%\par
+\par
+\tab Straight Flush to the A:\par
+\par
+\tab\tab No cards "\tab ":\par
+\tab\tab (the same as above)\par
+\par
+\tab\tab 1 card "\tab ":\par
+\tab\tab (1 C 1)^4(46 C 1) = 46 ways = .002171%\par
+\tab\tab\par
+\tab\tab 2 card suited " \tab ":\par
+\tab\tab (1 C 1)^3(47 C 2) = 1,081 ways = .05102%\par
+\par
+\tab Examples:\par
+\tab\tab\par
+\tab\tab AKs:\par
+\tab\tab 1,081 * 1 + 45 * 1 + 1 * 6 + 3 * (1 * 10) = 1,162 ways = .05484%\par
+\par
+\tab\tab 98:\par
+\tab\tab 2 * (45 * 5 + 1 * 4) + 2 * (1 * 10) = 478 ways = .02256%\par
+\par
+\tab\tab 66:\par
+\tab\tab (same as above)\par
+\par
+Four-of-a-kind: \par
+\par
+\tab Any Four-of-a-kind:\par
+\par
+\tab\tab No cards that are in the Four-of-a-kind:\par
+\tab\tab (4 C 4)(46 C 1) = 46 ways = .002171%\tab\par
+\par
+\tab\tab 1 card "\tab ":\par
+\tab\tab (3 C 3)(47 C 2) = 1,081 ways = .05102%\par
+\tab\par
+\tab\tab 2 cards "\tab ":\par
+\tab\tab (2 C 2)(48 C 3) = 17,296 ways = .8163%\par
+\par
+\tab Examples:\par
+\par
+\tab\tab AKs:\par
+\tab\tab 46 * 11 + 1,081 * 2 = 2,668 ways = .1259%\par
+\par
+\tab\tab 98:\par
+\tab\tab (same as above)\par
+\par
+\tab\tab 66:\par
+\tab\tab 46 * 12 + 17,296 * 1 = 17,848 ways = .8424%\par
+\par
+Full House:\par
+\par
+\tab Any Full House:\par
+\tab\par
+\tab\tab No cards that are in the Full House:\par
+\tab\tab (4 C 3)(4 C 2) = 24 ways = .001133%\par
+\par
+\tab\tab 1 card that is in the 2 cards of the Full House:\par
+\tab\tab (1)\tab (4 C 3)(3 C 1)(45 C 1) = 540 ways = .02549%\par
+\tab\tab (2)\tab (4 C 3)(3 C 1)(43 C 1) = 516 ways = .02435%\par
+\par
+\tab\tab\tab - (1) is the situation where the 1 card of the 2 cards\par
+\tab\tab\tab   is a lesser card of the card type for the 3 cards, while\par
+\tab\tab\tab   (2) is where an additional card of the 2 cards type\par
+\tab\tab\tab   would result in a new, different Full House.\par
+\par
+\tab\tab 1 card that is in the 3 cards\tab "\tab ":\par
+\tab\tab (1)\tab (4 C 2)(3 C 2)(45 C 1) = 810 ways = .03908%\par
+\tab\tab (2)\tab (4 C 2)(3 C 2)(43 C 1) = 774 ways = .03653%\par
+\par
+\tab\tab 1 card in both parts "\tab ":\par
+\tab\tab (1)\tab (3 C 2)(3 C 1)(46 C 2) - (3 C 2)(3 C 3) - (11 - x) = 9,301 + x ways = .4395% <- max value\par
+\tab\tab (2)\tab (3 C 2)(3 C 1)(44 C 2) - (12 - x) = 8,502 + x ways = .4018% <- max value\par
+\par
+\tab\tab\tab - The (12 - x) and (11 - x) parts were added in for the\par
+\tab\tab\tab   purpose to take out the cases where, if another two\par
+\tab\tab\tab   of the same cards appear and they happen to be of\par
+\tab\tab\tab   greater value than x, the value of the card with 2\par
+\tab\tab\tab   cards, than it is no longer a Full House over x, but\par
+\tab\tab\tab   some n, where n is not equal to the value of the\par
+\tab\tab\tab   card with 3 cards and n > x. Thus, the number of times\par
+\tab\tab\tab   this will happen in (1) is (12 - x - 1) or (11 - x),\par
+\tab\tab\tab   since (1) refers to a case where the value of the card\par
+\tab\tab\tab   with 3 instances of it is > x and n can not equal that\par
+\tab\tab\tab   value. For (2), the number is simply (12 - x).\par
+\par
+\tab\tab 2 cards that are in the 2 cards "\tab ":\par
+\tab\tab (1)\tab (4 C 3)(46 C 2) - (4 C 3)(2 C 2) - (11 - x) = 4,129 + x ways = .1954%\par
+\tab\tab (2)\tab (4 C 3)(44 C 2) - (12 - x) = 3,772 + x ways = .1784%\par
+\par
+\tab\tab 2 cards that are in the 3 cards "\tab ":\par
+\tab\tab (1)\tab (2 C 1)(4 C 2)(46 C 2) - (2 C 1)(4 C 4) - (11 - x) = 12,407 + x ways = .5861%\par
+\tab\tab (2)\tab (2 C 1)(4 C 2)(44 C 2) - (12 - x) = 11,340 + x ways = .5358%\par
+\par
+\tab Examples:\par
+\tab\tab\par
+\tab\tab AKs:\par
+\tab\tab 24 * 110 + 516 * 22 + 810 * 22 + (8,502 + 12) * 1 + (9,301 + 11) * 1 = 49,638 ways = 2.343%\par
+\par
+\tab\tab 98:\par
+\tab\tab 10 * 774\par
+\par
+\tab\tab 66:\par
+\tab\tab 24 * 132 + 3,784 * 8 + 4,140 * 4 + 11,352 * 8 + 12,418 * 4 = 190,488 ways = 8.991%\par
+}
+ 

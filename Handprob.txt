@@ -1,0 +1,170 @@
+public double[][] look_hand_%(player#)
+{
+	Deck deck1 = new Deck();
+
+	Deck deck2;
+
+	Card[] community = new Card[5];
+
+	int com = 0;
+
+	double wins = 0;
+
+	double hand_%;	
+
+	Hand[] hands = new Hand[player#];
+
+	hands[0] = new Hand();
+
+	double[][] hand_stats = new double[52][52];
+
+	int card1;
+	
+	int card2;
+
+	while (!deck1.IsEmpty())
+	{
+		hands[0].Set_card1(deck1.Get_card());
+
+		deck2 = deck1.Copy();
+
+		while (!deck2.IsEmpty())
+		{
+			hands[0].Set_card1(deck2.Get_card());
+
+			wins = find_hand_%(player#, deck2, hands, wins, community, com);
+	
+			double #hands = 1;		
+
+			switch (hands.length)
+			{
+				case (9) :
+					#hands *= (33 * 32);
+				case (8) :
+					#hands *= (35 * 34);
+				case (7) :
+					#hands *= (37 * 36);
+				case (6) :
+					#hands *= (39 * 38);
+				case (5) :
+					#hands *= (41 * 40);
+				case (4) :
+					#hands *= (43 * 42);
+				case (3) :		
+					#hands *= (45 * 44);
+				case (2) :
+					#hands *= (47 * 46);
+		
+					#hands *= (50 * 49 * 48);
+				
+					break;
+			}	
+
+			hand_% = (wins)/(#hands);
+
+			card1 = hands[0].Get_card1().Get_value() + (13 * hands[0].Get_card1().Get_suit());
+
+			card2 = hands[0].Get_card2().Get_value() + (13 * hands[0].Get_card2().Get_suit());
+
+			hand_stats[card1][card2] = hand_%;
+		}
+	}
+
+	return (hand_stats);
+}
+
+public double find_hand_%(player#, Deck deck1, Hand[] hands, double wins, Card[] community, int com)
+{
+	Deck deck2;
+
+	double value;
+
+	boolean push;
+	
+	int i;
+
+	if (player# == 1)
+	{
+		if (com != 5)
+		{
+			while (!deck1.IsEmpty())
+			{
+				community[com] = deck1.Get_card();
+
+				wins += find_hand_%(player#, hands, wins, community, (com++));
+			}
+		}
+		
+		else
+		{
+			Table table = new Table(community);
+
+			for (i = 0; i < hands.length; i++)
+			{
+				hands[i].Hand_worth(table);
+			}	
+
+			i = 1;
+		
+			push = false;	
+	
+			while ((i < hands.length) && (hands[0].Get_worth() >= hands[i].Get_worth())
+			{
+				if (hands[0].Get_worth() == hands[i].Get_worth())
+				{
+					push = true;
+				}
+				
+				i++;
+			}
+		
+		
+			if (i == hands.length)
+			{
+				if (push)
+				{
+					value = .5;
+
+					return (value);
+				}
+			
+				else
+				{
+					value = 1;
+
+					return (value);
+				}
+			}
+
+			else
+			{
+				value = 0;
+				
+				return (value);
+			}
+		}
+	}
+	
+	else
+	{
+		player#--;	
+
+		hands[player#] = new Hand();
+
+		while (!deck1.IsEmpty())
+		{
+			hands[player#].Set_card1(deck1.Get_card());
+		
+			deck2 = deck1.Copy();
+
+			while (!deck2.IsEmpty())
+			{
+				hands[player#].Set_card2(deck2.Get_card());
+			
+				wins += find_hand_%(table, player#, deck2, hands, wins, com);
+			}
+		}
+	}
+
+	return (wins);
+}

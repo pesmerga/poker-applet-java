@@ -1,0 +1,33 @@
+POKER PLAYA
+by James M. Piette III
+
+	v0.5: 6/4/04 8:07 PM
+
+		Version 0.5 is the beginning of the applet. Nothing
+		in the aspects of artificial intelligence has been
+		added to the program, but everything has been prepared
+		so that those things can easily be added in the future.
+
+		The applet works perfectly. Although somewhat tacky,
+		it functions correctly to the rules and restrictions
+		of Texas Hold'em Poker. Version 0.5 is, relatively
+		speaking, user-friendly for those that have played
+		Texas Hold'em before. Most of everything in the applet
+		is self-explanatory. Although some help may be added in
+		the future, it seems unnecessary to add it now.
+
+		Problems:
+			1) Players can not be added or removed as of yet.
+			   This function would be easily adaptable, but
+			   has not been implemented in this version.
+			2) If the applet window is resized, the applet
+			   begins to look sloppy and unfitting. This may
+			   or may not be a major problem, but, as far
+			   as aesthetics go, it is a problem.
+			3) Bankrolls are set all to be $0.00 in the
+			   beginning.
+			4) Nothing has been added to allow player(s) to
+			   place all their money in. Problems 1 and 3
+			   would first have to be addressed to correct
+			   this.
+			5) No AI added.

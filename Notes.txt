@@ -1,0 +1,6 @@
+*NOTES ON PROJECT*
+
+- Remeber to place an "if" statement or a method 
+  that will check to see if the amount the player
+  currently wants to bet will force that player
+  to go all-in or not.

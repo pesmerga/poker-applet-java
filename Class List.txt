@@ -1,0 +1,172 @@
+Poker Project - The Java Conversion 
+
+(list of all the classes, including their data members and methods)
+
+
+Deck
+
+- Data members: deck_cards[], array of 52 cards.
+		
+		top_card, an integer describing the index of the top 
+		or current card of the deck.
+
+- Constructors: Deck(), creates a deck with 52 cards that are unshuffled 
+		with values from 0 to 12 and suits from 0 ot 3.
+
+- Accessors:	Get_card(), returns the top card of the deck, described 
+		by the data member top_card, and makes the next card in the 
+		array or deck the top card.
+
+- Other:	Shuffle_deck(), shuffles deck_cards[] by creating a
+		seperate array of 52 random doubles chosen by a random
+		number generator, then sorts it in ascending order,
+		while the deck_cards[] mimics the sort. top_card is
+		set to 0 before program is terminated.
+
+Card
+
+- Data members: value, an integer 0 to 12 where Deuce = 0, Three = 1,
+		etc. all the way up to 12, which equals Ace.
+
+		suit, an integer between 0 to 3. 0 = clubs,
+		1 = diamonds, 2 = hearts, 3 = spades.
+
+- Constructors: Card(), creates an instance of Card that is blank.
+
+		Card(int some_value, int some_suit), constructs a
+		card with a given value and suit.
+
+- Accessors:	Get_value(), returns the integer value of the card.
+
+		Get_suit(), returns an integer representing the suit
+		of the card.
+
+Hand
+
+- Data members: card1, the first card that was dealt to the hand.
+
+		card2, the second card that was dealt to the hand.
+
+- Constructors: Hand(), creates a blank instance of Hand.
+
+		Hand(card new_card1, card new_card2), creates an
+		instance of the class Hand that begins with the
+		given two cards.
+
+- Accessors:	Get_card1(), returns the first card in the hand.
+
+		Get_card2(), returns the second card in the hand.
+
+		Get_high_card(), returns the card with the highest
+		value in the hand or, if both cards have = value,
+		then card1 is returned, instead.
+
+		Get_low_card(), returns the card with the lowest
+		value in the hand or, if both cards have = value,
+		then card2 is returned, instead.
+
+		Suited(), returns a boolean describing whether
+		the two cards in the hand are of the same suit,
+		where true means that the hand is suited and false
+		means that the hand is not suited.
+
+History
+
+- Data members: actions[][], a 2D array of integers that describes what 
+		actions a player has preformede in the past and current 
+		rounds. The array size is two (call and bet) by four 
+		(round 0, 1, 2, and 3).
+
+		fold_round, an integer describing what round the player
+		folded, and, if the player has yet to fold, has a
+		fold_round set to -1.
+
+		last_action, a character that represents the last action
+		performed by the player.
+
+- Constructors:	History(), a blank instance of the History class.
+
+- Accessors:	Get_act_hist(char action, int round), returns an integer of
+		how many of a certain action were performed during a given
+		round.
+
+		Get_fold_round(), returns the round that the player folded,
+		where, if the player has not folded, returns -1.
+
+Player
+
+- Data members: name, the name of the player.
+
+		bankroll, the amount of money the player has to play with.
+
+		bets_this_round, an integer between 0 and 4 describing the 
+		number of bets the player has made in the current round.
+
+		position, an integer describing where the player is seated
+		at the table.
+
+		folded, a boolean that represents whether the player has
+		folded (true) or if they have not folded (false).
+
+		myHand, the hand of the player.
+
+		myHistory, the betting history of the player.
+
+- Constructors:	Player(), blank instance of Player.
+
+		Player(String new_name, double new_bank, int new_pos), 
+		creates an instance of a player with a given name, 
+		bankroll, and position.
+
+- Accessors:	Get_name(), returns the name of the player.
+
+		Get_bankroll(), returns bankroll of the player.
+	
+		Get_bets(), returns the number of bets the player has
+		made this round.
+
+		Get_position(), returns the current position of the player.
+
+		Get_folded(), returns a boolean describing whether the
+		player has folded their hand or not.
+	
+		Get_hand(), returns myHand.
+
+		Get_history(), returns myHistory.
+
+- Other:	Get_action(), it's an abstract class that returns in the
+		form of a character, what the player's action when they
+		have been called will be, regardless of player type
+		('c' = "check" or "call", 'b' = "bet" or "raise", and
+		'f' = "fold".).
+
+Table
+
+- Data members: bet_level, the amount or cost that for each bet at the
+		table.
+
+		players, an array of players (max. 10) containing either
+		a null spot at a given index or a Player object.
+
+		current_player, an integer pointing to the index of the
+		current player being observed, prompted, etc.
+
+		last_raiser, an integer describing the index of the last
+		person to raise for the array, players.
+
+		dealer, the index of the player who is the dealer
+		currently at the table.
+
+		community, an array of Card objects (length of 5) that
+		has it's first three indexes filled with the cards from
+		the flop, the fourth index with a card from the turn,
+		and, finally, the fifth index a card from the river.
+
+		bets_round, the number of bets made, so far, in a given
+		round.
+
+		pot, a double representing the pot for the table.
+	
+Computer
+
+- Data members: 
